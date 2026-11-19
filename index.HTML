@@ -7,30 +7,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* ===== MINECRAFT PALETTE (kohesif, earthy) ===== */
+    /* ===== MINECRAFT PALETTE ===== */
     :root {
-      --grass:      #5a9e3a;  /* hijau rumput */
-      --grass-dark: #3e6e28;  /* rumput gelap */
-      --dirt:       #8b5a2b;  /* coklat tanah */
-      --dirt-dark:  #5c3a1a;  /* tanah gelap */
-      --stone:      #7d7d7d;  /* abu batu */
-      --stone-dark: #4a4a4a;  /* batu gelap */
-      --stone-light:#a0a0a0;  /* batu terang */
-      --wood:       #b8945f;  /* kayu */
-      --gold:       #f0c040;  /* emas (aksen) */
-      --diamond:    #4ecdc4;  /* diamond (aksen langka) */
-      --bg-dark:    #1a1a1a;  /* latar gelap */
-      --bg-mid:     #2b2b2b;  /* latar tengah */
-      --text:       #e8e8e8;  /* teks terang */
-      --text-dim:   #b0b0b0;  /* teks redup */
+      --grass:      #5a9e3a;
+      --grass-dark: #3e6e28;
+      --dirt:       #8b5a2b;
+      --dirt-dark:  #5c3a1a;
+      --stone:      #7d7d7d;
+      --stone-dark: #4a4a4a;
+      --wood:       #b8945f;
+      --gold:       #f0c040;
+      --diamond:    #4ecdc4;
+      --bg-dark:    #1a1a1a;
+      --text:       #e8e8e8;
+      --text-dim:   #b0b0b0;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
 
     body {
@@ -44,18 +37,10 @@
       overflow-x: hidden;
       font-size: 20px;
       line-height: 1.5;
-    }
-
-    /* pixel cursor */
-    body {
       cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><rect x="0" y="0" width="12" height="12" fill="%23f0c040" stroke="%23000" stroke-width="2"/></svg>') 6 6, auto;
     }
 
-    /* ===== PIXEL FONT HEADINGS ===== */
-    h1, h2, h3, h4, .pixel-font {
-      font-family: 'Press Start 2P', monospace;
-      letter-spacing: 1px;
-    }
+    h1, h2, h3, h4, .pixel-font { font-family: 'Press Start 2P', monospace; letter-spacing: 1px; }
 
     /* ===== NAVBAR ===== */
     .navbar {
@@ -63,410 +48,253 @@
       border-bottom: 4px solid #000;
       box-shadow: 0 4px 0 #000, inset 0 -4px 0 rgba(0,0,0,0.4), inset 0 4px 0 rgba(255,255,255,0.08);
       padding: 0.8rem 1.5rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 0.8rem;
+      position: sticky; top: 0; z-index: 1000;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 0.8rem;
     }
-
     .logo {
       font-family: 'Press Start 2P', monospace;
-      font-size: 1.1rem;
-      color: var(--gold);
+      font-size: 1.1rem; color: var(--gold);
       text-shadow: 2px 2px 0 #000;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      display: flex; align-items: center; gap: 10px;
     }
-
     .logo .cube {
-      width: 28px;
-      height: 28px;
-      background: var(--grass);
+      width: 28px; height: 28px; background: var(--grass);
       border: 3px solid #000;
       box-shadow: inset -4px -4px 0 rgba(0,0,0,0.3);
       position: relative;
     }
     .logo .cube::after {
-      content: '';
-      position: absolute;
-      top: -6px; left: 3px;
-      width: 18px; height: 4px;
-      background: var(--grass-dark);
+      content: ''; position: absolute; top: -6px; left: 3px;
+      width: 18px; height: 4px; background: var(--grass-dark);
       border: 2px solid #000;
     }
-
-    .nav-links {
-      display: flex;
-      gap: 0.35rem;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
+    .nav-links { display: flex; gap: 0.35rem; flex-wrap: wrap; align-items: center; }
     .nav-links a {
-      color: var(--text);
-      text-decoration: none;
-      font-size: 1.05rem;
-      padding: 0.35rem 0.7rem;
-      background: var(--stone);
+      color: var(--text); text-decoration: none; font-size: 1.05rem;
+      padding: 0.35rem 0.7rem; background: var(--stone);
       border: 2px solid #000;
       box-shadow: inset -2px -2px 0 rgba(0,0,0,0.35), inset 2px 2px 0 rgba(255,255,255,0.15);
-      transition: all 0.1s;
-      text-transform: uppercase;
+      transition: all 0.1s; text-transform: uppercase;
     }
-
     .nav-links a:hover {
-      background: var(--grass);
-      color: #fff;
-      transform: translateY(-2px);
+      background: var(--grass); color: #fff; transform: translateY(-2px);
       box-shadow: inset -2px -2px 0 rgba(0,0,0,0.35), inset 2px 2px 0 rgba(255,255,255,0.25), 0 3px 0 #000;
     }
-
     .theme-toggle {
-      background: var(--wood);
-      border: 2px solid #000;
+      background: var(--wood); border: 2px solid #000;
       box-shadow: inset -2px -2px 0 rgba(0,0,0,0.35), inset 2px 2px 0 rgba(255,255,255,0.2);
-      color: #000;
-      width: 42px;
-      height: 42px;
-      font-size: 1.2rem;
-      cursor: pointer;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      color: #000; width: 42px; height: 42px; font-size: 1.2rem;
+      cursor: pointer; display: flex; justify-content: center; align-items: center;
       transition: 0.15s;
     }
     .theme-toggle:hover { background: var(--gold); transform: scale(1.05); }
 
     /* ===== SECTIONS ===== */
-    section {
-      max-width: 1150px;
-      margin: 0 auto;
-      padding: 4.5rem 1.5rem;
-      position: relative;
-    }
-
+    section { max-width: 1150px; margin: 0 auto; padding: 4.5rem 1.5rem; position: relative; }
     .section-title {
-      font-size: 1.6rem;
-      color: var(--gold);
+      font-size: 1.6rem; color: var(--gold);
       text-shadow: 3px 3px 0 #000;
       margin-bottom: 2rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      padding-bottom: 0.6rem;
-      border-bottom: 4px solid var(--grass);
+      display: inline-flex; align-items: center; gap: 12px;
+      padding-bottom: 0.6rem; border-bottom: 4px solid var(--grass);
       position: relative;
     }
     .section-title i { color: var(--diamond); font-size: 1.5rem; }
     .section-title::after {
-      content: '';
-      position: absolute;
-      left: 0; bottom: -8px;
-      width: 60%; height: 4px;
-      background: var(--dirt);
+      content: ''; position: absolute; left: 0; bottom: -8px;
+      width: 60%; height: 4px; background: var(--dirt);
     }
 
     /* ===== HERO / HOME ===== */
     .hero {
       min-height: 85vh;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 3rem;
-      padding-top: 3rem;
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 3rem; padding-top: 3rem;
     }
-
     .hero-text { flex: 1; min-width: 300px; }
-
     .hero-text h1 {
-      font-size: 2.2rem;
-      line-height: 1.5;
-      margin-bottom: 1.2rem;
-      color: #fff;
+      font-size: 2.2rem; line-height: 1.5;
+      margin-bottom: 1.2rem; color: #fff;
       text-shadow: 4px 4px 0 #000;
     }
-
-    .hero-text .highlight {
-      color: var(--gold);
-      text-shadow: 4px 4px 0 var(--dirt-dark);
-    }
-
-    .hero-text .subtitle {
-      font-size: 1.5rem;
-      color: var(--text-dim);
-      margin-bottom: 1rem;
-    }
-
+    .hero-text .highlight { color: var(--gold); text-shadow: 4px 4px 0 var(--dirt-dark); }
+    .hero-text .subtitle { font-size: 1.5rem; color: var(--text-dim); margin-bottom: 1rem; }
     .hero-text .slogan {
-      font-size: 1.6rem;
-      color: var(--diamond);
-      font-style: italic;
-      margin: 1.5rem 0;
-      padding-left: 1rem;
-      border-left: 4px solid var(--grass);
+      font-size: 1.6rem; color: var(--diamond); font-style: italic;
+      margin: 1.5rem 0; padding-left: 1rem; border-left: 4px solid var(--grass);
     }
-
     .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
-
     .mc-btn {
       font-family: 'Press Start 2P', monospace;
-      font-size: 0.7rem;
-      padding: 1rem 1.5rem;
-      color: #fff;
-      text-decoration: none;
-      background: var(--grass);
-      border: 3px solid #000;
+      font-size: 0.7rem; padding: 1rem 1.5rem;
+      color: #fff; text-decoration: none;
+      background: var(--grass); border: 3px solid #000;
       box-shadow: inset -3px -3px 0 rgba(0,0,0,0.35), inset 3px 3px 0 rgba(255,255,255,0.2), 0 5px 0 #000;
       transition: all 0.08s;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
+      display: inline-flex; align-items: center; gap: 8px;
       text-transform: uppercase;
     }
-    .mc-btn:hover { transform: translateY(3px); box-shadow: inset -3px -3px 0 rgba(0,0,0,0.35), inset 3px 3px 0 rgba(255,255,255,0.2), 0 2px 0 #000; }
+    .mc-btn:hover {
+      transform: translateY(3px);
+      box-shadow: inset -3px -3px 0 rgba(0,0,0,0.35), inset 3px 3px 0 rgba(255,255,255,0.2), 0 2px 0 #000;
+    }
     .mc-btn.secondary { background: var(--stone); }
     .mc-btn.gold { background: var(--gold); color: #000; }
 
-    /* Steve-style character */
-    .hero-avatar { flex: 1; min-width: 280px; display: flex; justify-content: center; }
-
-    .steve {
-      width: 240px;
-      height: 340px;
+    /* ===== HERO IMAGE (Karakter PNG Transparan) ===== */
+    .hero-avatar {
+      flex: 1; min-width: 280px;
+      display: flex; justify-content: center; align-items: center;
       position: relative;
-      animation: steveFloat 3s ease-in-out infinite;
-      transition: transform 0.3s;
-      cursor: pointer;
     }
-    .steve:hover { transform: rotate(3deg) scale(1.04); }
-
-    @keyframes steveFloat {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-12px); }
-    }
-
-    .steve .head {
-      position: absolute;
-      top: 0; left: 50%; transform: translateX(-50%);
-      width: 100px; height: 100px;
-      background: #c9a37b;
-      border: 4px solid #000;
-      box-shadow: inset -8px -8px 0 rgba(0,0,0,0.2);
-    }
-    .steve .head::before {
-      content: '';
-      position: absolute;
-      top: 8px; left: 6px;
-      width: 88px; height: 26px;
-      background: #4a3527;
-      border: 2px solid #000;
-    }
-    .steve .head::after {
-      content: '';
-      position: absolute;
-      top: 52px; left: 14px;
-      width: 18px; height: 12px;
-      background: #fff;
-      box-shadow: 0 0 0 2px #000, 30px 0 0 0 #fff, 30px 0 0 2px #000, 46px 0 0 0 #3a5f8a, 46px 0 0 2px #000;
-    }
-    .steve .body {
-      position: absolute;
-      top: 100px; left: 50%; transform: translateX(-50%);
-      width: 110px; height: 130px;
-      background: var(--diamond);
-      border: 4px solid #000;
-      box-shadow: inset -10px -10px 0 rgba(0,0,0,0.2);
+    .hero-portrait {
+      position: relative;
+      width: 320px;
+      max-width: 100%;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      font-family: 'Press Start 2P', monospace;
-      font-size: 0.65rem;
-      color: #fff;
-      text-shadow: 2px 2px 0 #000;
-      letter-spacing: 1px;
+      animation: heroFloat 3.2s ease-in-out infinite;
+      transition: transform 0.3s;
     }
-    .steve .legs {
-      position: absolute;
-      top: 230px; left: 50%; transform: translateX(-50%);
-      display: flex;
-      gap: 10px;
-    }
-    .steve .leg {
-      width: 46px; height: 100px;
-      background: #3a5f8a;
-      border: 4px solid #000;
-      box-shadow: inset -5px -5px 0 rgba(0,0,0,0.25);
-    }
-    .steve .arm {
-      position: absolute;
-      width: 30px; height: 110px;
-      background: #c9a37b;
-      border: 4px solid #000;
-      box-shadow: inset -5px -5px 0 rgba(0,0,0,0.2);
-    }
-    .steve .arm.left  { top: 105px; left: 8px;  transform: rotate(10deg); }
-    .steve .arm.right { top: 105px; right: 8px; transform: rotate(-10deg); }
+    .hero-portrait:hover { transform: rotate(2deg) scale(1.05); }
 
-    /* grass base under steve */
-    .steve-base {
+    @keyframes heroFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .hero-portrait img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      image-rendering: pixelated;
+      /* Bayangan di bawah karakter */
+      filter: drop-shadow(6px 15px 6px rgba(0,0,0,0.6));
+      z-index: 2;
+      position: relative;
+    }
+
+    /* Basis rumput 3D di bawah karakter */
+    .hero-portrait .base {
       position: absolute;
       bottom: -10px; left: 50%; transform: translateX(-50%);
-      width: 200px; height: 30px;
+      width: 70%; height: 32px;
       background: var(--grass);
       border: 4px solid #000;
-      box-shadow: inset 0 6px 0 var(--grass-dark), inset 0 -6px 0 var(--dirt-dark);
-      z-index: -1;
+      box-shadow: 
+        inset 0 8px 0 var(--grass-dark), 
+        inset 0 -8px 0 var(--dirt-dark),
+        0 10px 15px rgba(0,0,0,0.8);
+      z-index: 1;
+      transition: all 0.3s;
+    }
+    .hero-portrait:hover .base {
+      transform: translateX(-50%) scaleX(1.1);
+      box-shadow: inset 0 8px 0 var(--grass-dark), inset 0 -8px 0 var(--dirt-dark), 0 15px 20px rgba(0,0,0,0.9);
+    }
+
+    /* Ikon diamond kecil di pojok */
+    .hero-portrait .badge {
+      position: absolute;
+      top: 10%; right: -10px;
+      width: 46px; height: 46px;
+      background: var(--gold);
+      border: 4px solid #000;
+      box-shadow: inset -4px -4px 0 rgba(0,0,0,0.3), 4px 4px 0 rgba(0,0,0,0.5);
+      display: flex; justify-content: center; align-items: center;
+      font-size: 1.3rem; color: #000;
+      transform: rotate(12deg);
+      z-index: 3;
+      animation: badgePulse 2s infinite alternate;
+    }
+    @keyframes badgePulse {
+      0% { transform: rotate(12deg) scale(1); }
+      100% { transform: rotate(12deg) scale(1.1); }
     }
 
     /* ===== CARDS / GRID ===== */
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.8rem;
-    }
-
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.8rem; }
     .mc-card {
       background: var(--stone-dark);
       border: 4px solid #000;
       box-shadow: inset -4px -4px 0 rgba(0,0,0,0.4), inset 4px 4px 0 rgba(255,255,255,0.08), 8px 8px 0 rgba(0,0,0,0.5);
-      padding: 1.8rem;
-      position: relative;
+      padding: 1.8rem; position: relative;
       transition: transform 0.15s, box-shadow 0.15s;
     }
     .mc-card:hover {
       transform: translate(-3px, -3px);
       box-shadow: inset -4px -4px 0 rgba(0,0,0,0.4), inset 4px 4px 0 rgba(255,255,255,0.08), 11px 11px 0 rgba(0,0,0,0.5);
     }
-
     .mc-card h3 {
-      font-size: 0.85rem;
-      color: var(--gold);
+      font-size: 0.85rem; color: var(--gold);
       text-shadow: 2px 2px 0 #000;
       margin-bottom: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding-bottom: 0.6rem;
-      border-bottom: 3px solid var(--dirt);
+      display: flex; align-items: center; gap: 10px;
+      padding-bottom: 0.6rem; border-bottom: 3px solid var(--dirt);
     }
     .mc-card h3 i { color: var(--diamond); }
-
-    .mc-card p, .mc-card li {
-      color: var(--text);
-      font-size: 1.25rem;
-      line-height: 1.6;
-    }
-
+    .mc-card p, .mc-card li { color: var(--text); font-size: 1.25rem; line-height: 1.6; }
     .mc-card ul { list-style: none; }
-    .mc-card ul li {
-      padding: 0.35rem 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-    .mc-card ul li i {
-      color: var(--grass);
-      margin-top: 6px;
-      font-size: 0.9rem;
-      flex-shrink: 0;
-    }
-
-    .mc-card a {
-      color: var(--diamond);
-      text-decoration: none;
-      border-bottom: 2px dotted var(--diamond);
-    }
+    .mc-card ul li { padding: 0.35rem 0; display: flex; align-items: flex-start; gap: 10px; }
+    .mc-card ul li i { color: var(--grass); margin-top: 6px; font-size: 0.9rem; flex-shrink: 0; }
+    .mc-card a { color: var(--diamond); text-decoration: none; border-bottom: 2px dotted var(--diamond); }
     .mc-card a:hover { color: var(--gold); border-color: var(--gold); }
 
-    /* ===== SKILL BARS (Minecraft-style XP bar) ===== */
+    /* ===== SKILL BARS ===== */
     .skill-item { margin-bottom: 1.4rem; }
-    .skill-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 1.2rem;
-      margin-bottom: 0.4rem;
-      color: var(--text);
-    }
+    .skill-label { display: flex; justify-content: space-between; font-size: 1.2rem; margin-bottom: 0.4rem; color: var(--text); }
     .skill-label strong { color: var(--gold); }
-
     .xp-bar {
-      height: 22px;
-      background: #1a1a1a;
+      height: 22px; background: #1a1a1a;
       border: 3px solid #000;
       box-shadow: inset 2px 2px 0 rgba(0,0,0,0.8);
-      position: relative;
-      overflow: hidden;
+      position: relative; overflow: hidden;
     }
     .xp-fill {
-      height: 100%;
-      width: 0;
+      height: 100%; width: 0;
       background: repeating-linear-gradient(90deg, var(--grass), var(--grass) 18px, var(--grass-dark) 18px, var(--grass-dark) 22px);
       box-shadow: inset 0 -4px 0 rgba(0,0,0,0.25), inset 0 4px 0 rgba(255,255,255,0.15);
       transition: width 1.4s ease-out;
     }
 
     /* ===== PROJECTS ===== */
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-
+    .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
     .project-card {
       background: var(--dirt-dark);
       border: 4px solid #000;
       box-shadow: inset -4px -4px 0 rgba(0,0,0,0.4), inset 4px 4px 0 rgba(255,255,255,0.08), 6px 6px 0 rgba(0,0,0,0.5);
-      padding: 1.5rem;
-      transition: 0.15s;
-      cursor: pointer;
+      padding: 1.5rem; transition: 0.15s; cursor: pointer;
     }
     .project-card:hover {
-      transform: translate(-3px, -3px);
-      background: var(--dirt);
+      transform: translate(-3px, -3px); background: var(--dirt);
       box-shadow: inset -4px -4px 0 rgba(0,0,0,0.4), inset 4px 4px 0 rgba(255,255,255,0.12), 9px 9px 0 rgba(0,0,0,0.5);
     }
-
     .project-icon {
-      font-size: 2.5rem;
-      color: var(--gold);
-      margin-bottom: 0.8rem;
-      display: inline-block;
+      font-size: 2.5rem; color: var(--gold);
+      margin-bottom: 0.8rem; display: inline-block;
       filter: drop-shadow(3px 3px 0 #000);
     }
-
     .project-card h4 {
-      font-size: 0.8rem;
-      color: var(--gold);
+      font-size: 0.8rem; color: var(--gold);
       text-shadow: 2px 2px 0 #000;
-      margin-bottom: 0.8rem;
-      line-height: 1.5;
+      margin-bottom: 0.8rem; line-height: 1.5;
     }
     .project-card p { font-size: 1.15rem; color: var(--text); }
-
     .tag {
       display: inline-block;
       font-family: 'Press Start 2P', monospace;
-      font-size: 0.55rem;
-      background: var(--grass);
-      color: #fff;
-      padding: 0.4rem 0.7rem;
-      border: 2px solid #000;
-      margin-top: 0.9rem;
+      font-size: 0.55rem; background: var(--grass);
+      color: #fff; padding: 0.4rem 0.7rem;
+      border: 2px solid #000; margin-top: 0.9rem;
       text-shadow: 1px 1px 0 #000;
     }
 
-    /* ===== HOBBIES ICONS ===== */
+    /* ===== HOBBIES ===== */
     .hobby-icon {
-      font-size: 2rem;
-      color: var(--gold);
-      margin-bottom: 0.6rem;
-      display: inline-block;
+      font-size: 2rem; color: var(--gold);
+      margin-bottom: 0.6rem; display: inline-block;
       filter: drop-shadow(2px 2px 0 #000);
     }
 
@@ -475,38 +303,26 @@
       background: var(--stone-dark);
       border-top: 5px solid var(--grass);
       box-shadow: inset 0 5px 0 rgba(0,0,0,0.5), 0 -4px 0 #000;
-      text-align: center;
-      padding: 2rem 1rem;
-      color: var(--text-dim);
-      font-size: 1.15rem;
+      text-align: center; padding: 2rem 1rem;
+      color: var(--text-dim); font-size: 1.15rem;
     }
     footer strong { color: var(--gold); }
 
     /* ===== BACK TO TOP ===== */
     .back-to-top {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      width: 54px;
-      height: 54px;
-      background: var(--grass);
-      color: #fff;
+      position: fixed; bottom: 25px; right: 25px;
+      width: 54px; height: 54px;
+      background: var(--grass); color: #fff;
       border: 4px solid #000;
       box-shadow: inset -3px -3px 0 rgba(0,0,0,0.35), inset 3px 3px 0 rgba(255,255,255,0.2), 0 5px 0 #000;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 1.4rem;
-      text-decoration: none;
-      z-index: 999;
-      opacity: 0;
-      visibility: hidden;
-      transition: 0.2s;
+      display: flex; justify-content: center; align-items: center;
+      font-size: 1.4rem; text-decoration: none;
+      z-index: 999; opacity: 0; visibility: hidden; transition: 0.2s;
     }
     .back-to-top.show { opacity: 1; visibility: visible; }
     .back-to-top:hover { background: var(--gold); color: #000; transform: translateY(-3px); }
 
-    /* ===== LIGHT MODE (tetap kohesif, lebih cerah) ===== */
+    /* ===== LIGHT MODE ===== */
     body.light-mode {
       background-color: #d9e8c8;
       background-image:
@@ -527,36 +343,19 @@
 
     /* ===== WELCOME OVERLAY ===== */
     .welcome-overlay {
-      position: fixed;
-      inset: 0;
-      background: #1a1a1a;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-      animation: fadeOutOverlay 2.6s forwards;
-      pointer-events: none;
+      position: fixed; inset: 0; background: #1a1a1a;
+      display: flex; justify-content: center; align-items: center;
+      z-index: 9999; animation: fadeOutOverlay 2.6s forwards; pointer-events: none;
     }
     .welcome-text {
       font-family: 'Press Start 2P', monospace;
-      font-size: 2rem;
-      color: var(--grass);
+      font-size: 2rem; color: var(--grass);
       text-shadow: 4px 4px 0 #000, 8px 8px 0 var(--dirt-dark);
-      animation: popIn 0.5s ease-out;
-      text-align: center;
-      line-height: 1.8;
+      animation: popIn 0.5s ease-out; text-align: center; line-height: 1.8;
     }
     .welcome-text small { display: block; font-size: 0.9rem; color: var(--gold); margin-top: 1rem; }
-
-    @keyframes fadeOutOverlay {
-      0% { opacity: 1; }
-      75% { opacity: 1; }
-      100% { opacity: 0; visibility: hidden; }
-    }
-    @keyframes popIn {
-      0% { transform: scale(0.6); opacity: 0; }
-      100% { transform: scale(1); opacity: 1; }
-    }
+    @keyframes fadeOutOverlay { 0% { opacity: 1; } 75% { opacity: 1; } 100% { opacity: 0; visibility: hidden; } }
+    @keyframes popIn { 0% { transform: scale(0.6); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
@@ -566,7 +365,7 @@
       .nav-links a { font-size: 0.95rem; padding: 0.3rem 0.5rem; }
       .hero-text h1 { font-size: 1.5rem; }
       .section-title { font-size: 1.15rem; }
-      .steve { transform: scale(0.85); }
+      .hero-portrait { width: 260px; }
       section { padding: 3rem 1rem; }
     }
   </style>
@@ -610,13 +409,16 @@
       </div>
     </div>
     <div class="hero-avatar">
-      <div class="steve">
-        <div class="head"></div>
-        <div class="arm left"></div>
-        <div class="arm right"></div>
-        <div class="body">EYZA</div>
-        <div class="legs"><div class="leg"></div><div class="leg"></div></div>
-        <div class="steve-base"></div>
+      <div class="hero-portrait">
+        <div class="badge"><i class="fas fa-gem"></i></div>
+        <!-- Gambar Karakter PNG Transparan -->
+        <img
+      <img src="karakter.png" ...>
+          alt="Karakter Minecraft Faeyza"
+          loading="eager"
+          onerror="this.src='https://p7.hiclipart.com/preview/637/603/756/5bbdb26a941ad.jpg';"
+        >
+        <div class="base"></div>
       </div>
     </div>
   </section>
@@ -823,13 +625,11 @@
   <a href="#home" class="back-to-top" id="backToTop"><i class="fas fa-caret-up"></i></a>
 
   <script>
-    // Back to top
     const backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
       backToTop.classList.toggle('show', window.scrollY > 400);
     });
 
-    // Theme toggle
     const themeToggle = document.getElementById('themeToggle');
     const icon = themeToggle.querySelector('i');
     themeToggle.addEventListener('click', () => {
@@ -838,18 +638,14 @@
       icon.className = light ? 'fas fa-sun' : 'fas fa-moon';
     });
 
-    // XP bar animation on scroll
     const fills = document.querySelectorAll('.xp-fill');
     const obs = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.style.width = e.target.dataset.width;
-        }
+        if (e.isIntersecting) e.target.style.width = e.target.dataset.width;
       });
     }, { threshold: 0.4 });
     fills.forEach(f => obs.observe(f));
 
-    // Smooth scroll
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', function(e) {
         const t = document.querySelector(this.getAttribute('href'));
@@ -857,14 +653,12 @@
       });
     });
 
-    // Card click feedback (Minecraft "hit" feel)
     document.querySelectorAll('.mc-card, .project-card').forEach(card => {
       card.addEventListener('mousedown', () => card.style.transform = 'scale(0.97)');
       card.addEventListener('mouseup', () => card.style.transform = '');
       card.addEventListener('mouseleave', () => card.style.transform = '');
     });
 
-    // Welcome overlay cleanup
     setTimeout(() => {
       const o = document.querySelector('.welcome-overlay');
       if (o) o.remove();
